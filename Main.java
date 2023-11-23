@@ -5,14 +5,13 @@ import java.util.*;
 
 public class Main {
 
-
     public static void main(String[] args) throws IOException {
         long tempoInicial = System.currentTimeMillis();
         Perceptron perceptron = new Perceptron();
 
         GeneticAlgoritm ga = new GeneticAlgoritm();
 
-        String csvFile = "C:\\Users\\frede\\OneDrive\\Área de Trabalho\\trabalho3\\iris.data"; // Caminho do arquivo CSV
+        String csvFile = "/home/frcastro/Documents/ComputacaoBioInspiradaTrabalho3-main/iris.data"; // Caminho do arquivo CSV
         BufferedReader br = new BufferedReader(new FileReader(csvFile));
 
         List<String> lines = new ArrayList<>();
@@ -49,7 +48,7 @@ public class Main {
 
                 String[] values = lines.get(p).split(",");
                 double[] dataRow = new double[Constants.CHROMOSOME_SIZE];
-                for (int j = 0; j < Constants.CHROMOSOME_SIZE - 1; j++) {
+                for (int j = 0; j < Constants.CHROMOSOME_SIZE; j++) {
                     dataRow[j] = Double.parseDouble(values[j]);
                 }
                 trainingPopulation[p] = dataRow;
@@ -60,7 +59,7 @@ public class Main {
             for (int p = Constants.POPULATION_SIZE; p < lines.size(); p++) {
                 String[] values = lines.get(p).split(",");
                 double[] dataRow = new double[Constants.CHROMOSOME_SIZE];
-                for (int j = 0; j < Constants.CHROMOSOME_SIZE - 1; j++) {
+                for (int j = 0; j < Constants.CHROMOSOME_SIZE; j++) {
                     dataRow[j] = Double.parseDouble(values[j]);
                 }
                 populationToBeTrained[q] = dataRow;

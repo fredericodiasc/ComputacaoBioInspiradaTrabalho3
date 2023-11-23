@@ -18,7 +18,7 @@ public class PerceptronAtividade2 {
             0.1, 0.1, 0.1, 0.1, 0.1};
 
     private static final int[] EPOCHS = {
-            10000, 10000, 10000, 10000, 10000};
+            100, 100, 100, 100, 100};
 
     public PerceptronAtividade2(int numInputs, double learningRate) {
         weights = new double[numInputs];
@@ -57,7 +57,7 @@ public class PerceptronAtividade2 {
 
     public static void main(String[] args) throws IOException {
         long tempoInicial = System.currentTimeMillis();
-        String csvFile = "C:\\Users\\frede\\OneDrive\\Área de Trabalho\\trabalho3\\iris.data"; // Path Duas classes: data\\iris_p.data - Path três classes data\iris.data
+        String csvFile = "/home/frcastro/Documents/ComputacaoBioInspiradaTrabalho3-main/iris.data"; // Path Duas classes: data\\iris_p.data - Path três classes data\iris.data
         BufferedReader br = new BufferedReader(new FileReader(csvFile));
         List<String> lines = new ArrayList<>();
         String line;

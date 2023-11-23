@@ -84,8 +84,9 @@ public class GeneticAlgoritm {
 
     public double[][] crossover(double[][] parents) {
         double[][] offspring = new double[Constants.POPULATION_SIZE][Constants.CHROMOSOME_SIZE];
+        Random random = new Random();
 
-        int crossoverPoint = 0;
+        int crossoverPoint = random.nextInt(Constants.CHROMOSOME_SIZE);
 
         for (int i = 0; i < Constants.POPULATION_SIZE; i++) {
             System.arraycopy(parents[i % 2], 0, offspring[i], 0, crossoverPoint);
