@@ -1,22 +1,22 @@
 import java.util.Random;
 
 class Perceptron {
-    private double[] pesos;
+    private double[] weights;
 
     public Perceptron() {
-        this.pesos = new double[3];
+        this.weights = new double[Constants.CHROMOSOME_SIZE];
         initializeWeights();
     }
 
     public void initializeWeights() {
         Random random = new Random();
-        for (int i = 0; i < pesos.length; i++) {
-            pesos[i] = random.nextDouble() * 2 - 1;
+        for (int i = 0; i < weights.length; i++) {
+            weights[i] = random.nextDouble() * 2 - 1;
         }
     }
 
     public void setPesos(double[] pesos) {
-        this.pesos = pesos;
+        this.weights = pesos;
     }
 
     //Com base nos pesos do perceptron o mesmo tenta prever o atributo classe do objeto
@@ -24,7 +24,7 @@ class Perceptron {
         double sum = 0;
 
         for (int i = 0; i < inputs.length; i++) {
-            sum += inputs[i] * pesos[i];
+            sum += inputs[i] * weights[i];
         }
 
         return (sum > 0) ? 1 : 0;
